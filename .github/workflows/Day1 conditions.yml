@@ -1,0 +1,19 @@
+name: Conditionals Demo
+on: [push]
+
+jobs:
+  conditional-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set a dynamic output
+        id: producer
+        run: echo "should_run=true" >> $GITHUB_OUTPUT
+
+      - name: Conditional Step
+        # Runs only if the previous step's output is 'true'
+        if: steps.producer.outputs.should_run == 'true'
+        run: echo "This step ran because the condition was met!"
+
+      - name: Success Only
+        if: success() # Only runs if all previous steps succeeded
+        run: echo "Everything worked!"
