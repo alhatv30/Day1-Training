@@ -2,7 +2,7 @@ name: Variables and Secrets Demo
 on: [push, workflow_dispatch]
 
 env:                                              # this is variable defination
-  GLOBAL_VAR:"Hello from Workflow Level"          # this is variable value
+  GLOBAL_VAR: "Hello from Workflow Level"          # this is variable value
 
 jobs:
   secret-test:
