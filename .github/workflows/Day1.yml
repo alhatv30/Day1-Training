@@ -1,10 +1,10 @@
 name: Scheduler via GH
 
 on:
-#  push:
+  push:
 #    branches:
 #      - main
-  workflow_dispatch:
+#  workflow_dispatch:
 
 
 jobs:
