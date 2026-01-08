@@ -1,0 +1,17 @@
+name: Scheduler via GH
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' #because it will not sypport less than 5 I tried for 2 min also
+  workflow_dispatch:
+
+jobs:
+  echo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: |
+          echo "Hi, I am running this simple code to test the basic block of GitHub Actions."
+          echo "RS ID: arjun.sahi@rackspace.com"
+          echo "Workflow executed successfully"
+          echo "Current time is $(date)"
