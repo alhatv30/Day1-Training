@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Set a dynamic output
         id: producer
-        run: echo "should_run=false" >> $GITHUB_OUTPUT
+        run: echo "should_run=true" >> $GITHUB_OUTPUT
 
       - name: Conditional Step
         # Runs only if the previous step's output is 'true'
