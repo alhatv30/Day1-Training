@@ -1,19 +1,18 @@
 name: Variables and Secrets Demo
 on: [push, workflow_dispatch]
 
-env:                                               // this is variable defination
-  GLOBAL_VAR:"Hello from Workflow Level"          // this is variable value
+env:                                              # this is variable defination
+  GLOBAL_VAR:"Hello from Workflow Level"          # this is variable value
 
 jobs:
   secret-test:
     runs-on: ubuntu-latest
     steps:
       - name: Using a Local Variable
-        run: echo "The global variable is $GLOBAL_VAR"          // variable value from line 5 called here    
+        run: echo "The global variable is $GLOBAL_VAR"          # variable value from line 5 called here    
         
       - name: Using a Secret
         env:
           MY_SECRET: ${{ secrets.MY_SECRET_NAME }}
         run: |
-          # Secrets are automatically masked (shown as ***) in logs
           echo "Accessing my secret: $MY_SECRET"
